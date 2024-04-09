@@ -14,6 +14,6 @@ def number_or_account(user_input: str) -> None:
     Функция определяет работаем мы с счетом или картой.
     """
     if "Счет" in user_input:
-        print(f"Счет {mask_account_number(user_input)}")
+        return mask_account_number(user_input)
     else:
-        print(f"{mask_card_number(user_input)}")
+        return mask_card_number(user_input)
