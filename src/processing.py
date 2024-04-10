@@ -1,16 +1,16 @@
-def filter_state(data, state='EXECUTED'):
+def filter_state(data, state: str = 'EXECUTED') -> list:
     """
     Функция принимает список словарей и значение для ключа state (по умолчанию EXECUTED)
     возвращает список, содержащий только словари, у которых значение ключа state совпадает с переданным в функцию.
     """
-    filtered_data = []
+    filtered_list = []
     for d in data:
         if d.get('state') == state:
-            filtered_data.append(d)
-    return filtered_data
+            filtered_list.append(d)
+    return filtered_list
 
 
-def convert_date(date):
+def convert_date(date: str) -> tuple:
     """
     Функция раскидывает каждое значение даты в отдельную переменную.
     """
@@ -23,12 +23,12 @@ def convert_date(date):
     return year, month, day, hour, minute, second
 
 
-def key_for_sort(x):
+def key_for_sort(x) -> tuple:
     """Функция выдает ключ для работы функции sort_by_date."""
     return convert_date(x['date'])
 
 
-def sort_by_date(data, order='desc'):
+def sort_by_date(data, order: str = 'desc') -> list:
     """
     Сортирует по времени
     """
