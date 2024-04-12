@@ -30,7 +30,7 @@ def key_for_sort(x) -> tuple:
 
 def sort_by_date(data, order: str = 'desc') -> list:
     """
-    Сортирует по времени
+    Сортирует по времени.
     """
     reverse = order.lower() == 'desc'
     return sorted(data, key=key_for_sort, reverse=reverse)
